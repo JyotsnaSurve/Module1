@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Timeout</title>
+		<script>
+		var ClearT;
+			function TimeoutFunc(){
+			ClearT = setTimeout(function(){
+			Function
+				//alert('Hello World');
+				window.location="http://google.com";
+			},'3000');
+			}
+			function StopTimeout()
+			{
+				clearTimeout(ClearT);
+				alert('Timeout is stopped..');
+			}
+		var ClearI;
+			function IntervalFunc(){
+			ClearI = setInterval('Message()','3000');
+			}
+			function Message(){
+				alert('Welcome to javascript');
+			}
+			function StopInterval()
+			{
+				clearInterval(ClearI);
+				alert('Interval is stopped..');
+			}
+		</script>
+	</head>
+	<body>
+	<input type="button" value="SetTimeout Func" onclick="TimeoutFunc()"/>
+	<input type="button" value="Stop Timer" onclick="StopTimeout()"/>
+	<input type="button" value="SetInterval Func" onclick="IntervalFunc()"/>
+	<input type="button" value="StopInterval" onclick="StopInterval()"/>
+	
+	</body>
+</html>

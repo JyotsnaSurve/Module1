@@ -1,0 +1,103 @@
+ans 2.1
+1)
+/*********************************************************************
+ * File                	 	: subroutines.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate units consumed 
+							  and net amount.
+ * Version            	 	: 3.0
+ * Last Modified Date   	: 24-August-2017
+ * Change Description   	: program is done using subroutines
+ *********************************************************************/
+BEGIN
+	DECLARE userid,fixcharge AS INTEGER
+	DECLARE username AS STRING
+	DECLARE last_month_reading, current_month_reading, units_consumed, net_amount AS DECIMAL
+	DECLARE CONSTANT multiplier=1.15
+	INITIALIZE fixcharge=100
+	PROMPT "enter userid:" AND STORE IN userid
+	PROMPT "enter username:" AND STORE IN username
+	PROMPT "enter last month month meter reading:" AND STORE IN last_month_reading
+	PROMPT "enter current month meter reading:" AND STORE IN current_month_reading
+	units_consumed=calculate_units_consumed(last_month_reading,current_month_reading) 
+	net_amount=calculate_net_amount(units_consumed,multiplier,fixcharge) 
+	DISPLAY "user ID:", userid
+	DISPLAY "user name:", username
+	DISPLAY "user consumed:", units_consumed
+	DISPLAY "net amount:", net_amount
+END
+
+DECIMAL SUB calculate_units_consumed(DECIMAL last_month_reading, DECIMAL current_month_reading)
+	DECLARE units_consumed AS DECIMAL
+	CALCULATE units_consumed=(last_month_reading)-(current_month_reading)
+	RETURN units_consumed
+END SUB
+
+DECIMAL SUB calculate_net_amount(DECIMAL units_consumed,DECIMAL multiplier,DECIMAL fixcharge)
+	DECLARE net_amount AS DECIMAL
+	CALCULATE net_amount=units_consumed * multiplier + fixcharge
+	RETURN net_amount
+END SUB
+
+
+2)
+/*********************************************************************
+ * File                	 	: subroutines.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to check organization of employee.
+ * Version            	 	: 2.0
+ * Last Modified Date   	: 24-August-2017
+ * Change Description   	: program is done using subroutines
+ *********************************************************************/
+BEGIN
+	DECLARE experience AS INTEGER
+	DECLARE TAG_COLOR AS STRING
+	PROMPT "enter the experience" AND STORE IN experience
+	TAG_COLOR=get_tagcolor(experience)
+	DISPLAY "Tag Color is:",TAG_COLOR
+END
+	
+STRING SUB get_tagcolor(INTEGER experience)
+	DECLARE tagcolor AS STRING
+	IF (experience<0 AND experience>50)
+		DISPLAY "enter the valid year"
+	ELSE IF (experience=0 AND experience<3)
+		tagcolor="BLUE"
+	ELSE IF (experience<5)
+		tagcolor="GREY"
+	ELSE IF (experience<10)
+		tagcolor="YELLOW"
+	ELSE
+		tagcolor="RED"
+
+	END IF
+	RETURN tagcolor
+END SUB
+
+
+3)
+/************************************************************************
+ * File                	 	: subroutines.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to display smallest number in an array
+							  and display odd and even numbers.
+ * Version            	 	: 2.0
+ * Last Modified Date   	: 24-August-2017
+ * Change Description   	: program is done using subroutines
+ ************************************************************************/
+BEGIN
+
+4)
+BEGIN
+	DECLARE product_price, total_price AS DECIMAL
+	DECLARE CONSTANT tax_rate=0.56
+	PROMPT "Enter the price of your product" AND STORE IN product_price
+	total_price=calculate_total_price(product_price, tax_rate)
+	DISPLAY "Total price of product is:",total_price
+END
+	
+DECIMAL SUB calculate_total_price(DECIMAL product_price,DECIMAL tax_rate)
+		DECLARE total_price AS DECIMAL
+		CALCULATE total_price=product_price*tax_rate
+		RETURN total_price
+END SUB

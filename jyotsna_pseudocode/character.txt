@@ -1,0 +1,20 @@
+/*********************************************************************
+* Module Name         	: applyDiscount()
+* Input Parameters      : productId, discount
+* Return Type         	: INTEGER
+* Author              	: Capgemini
+* Creation Date      	: 8-May-2016
+* Description        	: Applying discount on the product price
+*********************************************************************/
+
+INTEGER SUB getoccurence(STRING word[], CHAR letter)
+	DECLARE index, count AS INTEGER
+	INITIALIZE count AS 0
+	INITIALIZE index AS 0
+	WHILE (word[index) NOT EQUAL TO NULL)
+		IF word[index] EQUAL TO letter
+			count=count+1
+		END IF
+	index=index+1
+	END WHILE
+END SUB

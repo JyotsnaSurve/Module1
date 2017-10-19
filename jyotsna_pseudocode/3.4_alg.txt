@@ -1,0 +1,20 @@
+/*********************************************************************
+ * File                	 	: 3.4_algorithm.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate efficiency of given algorithm.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 24-August-2017
+ * Change Description   	: Description about the changes implemented
+ *********************************************************************/
+The algorithm is computing the sum of the n elements starting from 1 to n which is taken as input.
+
+efficiency class of the algorithm is O(n)
+
+as per the formula :
+i=l to u summation of (1=u-l+1)
+where u is initial condition of the loop and l is final condition.
+hence,
+i=1 to n summation of (1=n-1+1)
+hence we get,
+i=1 to n summation of (1=n)
+therefore efficiency of the algorithm is O(n)

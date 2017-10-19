@@ -1,0 +1,21 @@
+1. Algorithm is finding the smallest and the largest element of the array and storing it in x and y respectively and returning the difference between them.
+
+2. In the algorithm x and y stores the element at the 0th position of the array as the initial condition.
+For n-2 iterations element stored in x is compared with the ith elements of the elements of the array. Hence x stores the smallest element.
+Similarly element stored in y is compared with the elements of the array for n-2 iterations.The largest element is stored in y
+for every comparisons made between the y and the ith position element of the array.
+
+3. The basic operation executes n-1 times. It depends on the size of the array given as input by the user.
+
+4. Suppose n=7 and
+   A[7]=[10 12 1 5 15 6]
+   then
+   i    A[i]    x     y
+   1     10     10    10
+   2     12     10    12
+   3      1      1    12
+   4      5      1    12
+   5     15      1    15
+   6      6      1    15
+
+5. Efficiency of the algorithm according to formula is: O(n)

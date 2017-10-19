@@ -1,0 +1,39 @@
+Matrix
+-------------------------------------------
+INTEGER Matrix [row][col]
+-------------------------------------------
+Matrix()
+Matrix(Int size)
+Addition(matrix1, matrix2)
+readMatrix(Matrix)
+printMatrix(Matrix)
+-------------------------------------------
+
+\\***Non-parameterized Constructor***\\
+Matrix{
+row=10
+col=10
+}
+
+
+\\***Parameterized Constructor***\\
+
+Matrix(Int size){
+	row=col=size
+}
+
+-------------------------------------------
+
+
+Matrix m1= new Matrix(5);
+Matrix m2= new Matrix(5);
+Matrix add= new Matrix(5);
+
+readMatrix(m1);
+printMatrix(m1);
+
+readMatrix(m2);
+printMatrix(m2);
+
+add=addition_of_two(m1,m2);
+printMatrix(add);

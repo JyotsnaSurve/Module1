@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Attribute Selector..</title>
+		<style>
+		img[title]{
+			border:1px solid blue;
+		}
+		img[src="../images/bird.jpg"]
+		{
+			border:4px dotted red;
+		}
+		img[alt~="dog"]
+		{
+			border:5px dashed green;
+		}
+		</style>
+	</head>
+	<body>
+		<img src="../images/dog.jpg" alt="dog image not found.." title="dog image"
+		width="400px" height="340px"/>
+		<img src="../images/bird.jpg" alt="bird image not found.."
+		width="400px" height="340px"/>
+	</body>
+
+</html>

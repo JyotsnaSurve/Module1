@@ -1,0 +1,50 @@
+/***********************************************************************
+ * File                	 	: 2.3_unique.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to accept an array with 10 numbers 
+				  and return number of unique values in an array. 
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 02-september-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+
+BEGIN
+	DECLARE element[10] AS INTEGER ARRAY
+	DECLARE count AS INTEGER
+	DISPLAY ("Enter element of array")
+	FOR index 0 TO 9
+		ACCEPT element[index]
+	END FOR
+	count = getUniqueCount(element[])
+	DISPLAY("Number of unique elements are",count)
+END
+
+/*********************************************************************
+* Module Name         	: getUniqueCount()
+* Input Parameters      : element[]
+* Return Type         	: INTEGER
+* Author              	: Jyotsna Surve
+* Creation Date      	: 02-september-2017
+* Description        	: Count number of element which are unique
+ *********************************************************************/
+
+INTEGER SUB getUniqueCount(INTEGER ARRAY element[])
+	DECLARE flag,count AS INTEGER
+	INITIALIZE count=0
+	INITIALIZE flag=0
+	
+	FOR index 0 TO 9
+	FOR inner_index 0 TO 9
+		IF(index != inner_index)
+			THEN
+			IF(element[index] == element[inner_index])
+			flag=1
+			END IF
+		END IF
+	END FOR
+	IF(flag=0)
+		count=count+1
+	END IF
+	END FOR
+	RETURN count
+END SUB

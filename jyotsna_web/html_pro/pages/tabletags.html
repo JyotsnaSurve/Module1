@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Table tags</title>
+		<!--Inline CSS-->
+		<style>
+			/*universal selector*/
+			table{
+				font-family:'Segoe UI';
+				//font-style:italic;
+				color: blue;
+			}
+			/* Tag or element selector*/
+			td{
+				text-align:center;
+			}
+			/*creating own class in css*/
+			.desig{
+				background-color:purple;
+				color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--Scrolling text-->
+		<marquee direction="right">
+			<h1>Table Tags</h1>
+		</marquee>
+		<table align ="center" border="1" cellspacing="5" cellpadding="5">
+		<caption><h2> employee and dept details</h2></caption>
+			<thead>
+			<tr>
+				<th>EId</th>
+				<th>name</th>
+				<th>salary</th>
+				<th>designation</th>
+			</tr>
+			</thead>
+			<tr>
+				<td>101</td>
+				<td>karthik</td>
+				<td>25000</td>
+				<th rowspan="2" class="desig"> developer</th>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>jyotsna</td>
+				<td>30000</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>vinay</td>
+				<td>25000</td>
+				<th>tester</th>
+			</tr>
+			<tr>
+				<td colspan="3">80000</td>
+				<th>total</th>
+			</tr>
+		</table>
+	</body>
+</html>

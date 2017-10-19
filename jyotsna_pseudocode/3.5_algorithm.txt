@@ -1,0 +1,20 @@
+/*********************************************************************
+* Module Name         	: findChar()
+* Input Parameters      : word[], letter
+* Return Type         	: INTEGER
+* Author              	: Jyotsna Surve
+* Creation Date      	: 26-August-2017
+* Description        	: Subroutine to find occurence of character
+ *********************************************************************/
+
+INTEGER SUB findChar(STRING word[], CHAR letter)
+	DECLARE occurnumber, index AS INTEGER
+	INITIALIZE index AS 0
+	WHILE (word[index] IS NOT EQUAL TO NULL)
+		IF(word(index) IS EQUAL TO letter)
+			CALCULATE occurnumber=occurnumber+1
+		END IF
+		CALCULATE index=index+1
+	END WHILE
+	RETURN occurnumber
+END

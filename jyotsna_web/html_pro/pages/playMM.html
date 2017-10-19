@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>audio and video</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+		<script>
+			if (Modernizr.canvas)
+			alert('It is supported');
+			else
+			alert('It is not supported');
+		</script>	
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<h3>audio</h3>
+				</td>
+				<td>
+					<h3>video</h3>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<audio autoplay controls loop>
+						<source src="..\media\kalimba.mp3" type="audio/mp3"/>
+					</audio>
+				</td>
+				<td>
+					<video controls autoplay loop>
+						<source src="..\media\movie.mp4" type="video/mp4"/>
+					</video>
+				</td>
+			</tr>
+			</table>
+	</body>
+
+</html>

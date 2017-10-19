@@ -1,0 +1,16 @@
+/**********************************************************************
+ * File                	 	: 1.7_tax.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate total price of product.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 24-August-2017
+ * Change Description   	: Description about the changes implemented
+ **********************************************************************/
+ 
+BEGIN
+	DECLARE product_price, total_price AS DECIMAL
+	DECLARE CONSTANT tax_rate=0.56
+	PROMPT "Enter the price of your product" AND STORE IN product_price
+	CALCULATE total_price=product_price*tax_rate
+	DISPLAY "Total price of product is:",total_price
+END

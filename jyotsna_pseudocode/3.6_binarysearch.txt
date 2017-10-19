@@ -1,0 +1,96 @@
+/*********************************************************************************
+ * File                	 	: 3.6_binarysearch.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to sort array and search element using binary search.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 04-september-2017
+ * Change Description   	: Description about the changes implemented
+ *********************************************************************************/
+
+BEGIN
+	DECLARE list[50], Sortedlist[50] AS INTEGER ARRAY
+	DECLARE index AS INTEGER
+	DECLARE CONSTANT listlength=5
+	
+	DISPLAY "Enter the elements"
+	FOR index 0 TO listlength
+		ACCEPT list[index]
+		CALCULATE index=index+1
+	END FOR
+	CALL sortarray(list[],listlength)
+END
+
+
+
+*********************************************************************
+* Module Name         	: sortarray()
+* Input Parameters      : list[], listlength
+* Return Type         	: 
+* Author              	: Jyotsna Surve
+* Creation Date      	: 04-september-2017
+* Description        	: Subroutine to sort array
+ *********************************************************************/
+
+	SUB sortarray(INTEGER ARRAY list[], INTEGER listlength)
+	DECLARE outerindex, innerindex, swaptemporary, search_status,low, high AS INTEGER
+	INITIALIZE low=0
+	high=listlength
+
+	FOR outerindex 0 TO listlength-1
+		FOR innerindex outerindex+1 TO listlength-1
+			IF(list[outerindex IS GREATER THAN list[innerindex])
+				swaptemporary = list[outerindex]
+				list[outerindex] = list[innerindex]
+				list[innerindex] = swaptemporary
+			END IF
+		END FOR
+	END FOR
+	search_status=CALL searchNumber(list[], low, high) //binary search subroutine is called
+	CALL displaystatus(search_status)
+END SUB
+
+
+***********************************************************************
+* Module Name         	: searchNumber()
+* Input Parameters      : list[], lOW, high
+* Return Type         	: INTEGER
+* Author              	: Jyotsna Surve
+* Creation Date      	: 04-september-2017
+* Description        	: Subroutine to search an element using binary search
+ ***********************************************************************/
+
+INTEGER SUB searchNumber(INTEGER ARRAY list[], INTEGER low, INTEGER high)
+	DECLARE search_element, mid, low, high AS INTEGER
+	PROMPT "Enter the element to be searched" AND STORE IN search_element
+	
+	CALCULATE mid = (low+high)/2
+	WHILE(low IS LESS THAN OR EQUAL TO high)
+		IF(list[mid]<search_element)
+			CALCULATE low=mid+1
+			searchNumber(list[],low,high)
+		END IF(list[mid]>search_element)
+			CALCULATE high=mid-1
+			searchNumber(list[],low,high)
+		END IF(list[mid]=search_element)
+			RETURN mid
+		ELSE
+			RETURN -1
+		END IF
+	END WHILE
+END SUB
+
+
+***********************************************************************
+* Module Name         	: displayStatus()
+* Input Parameters      : search_status
+* Return Type         	: 
+* Author              	: Jyotsna Surve
+* Creation Date      	: 04-september-2017
+* Description        	: Subroutine to display the element found
+ ***********************************************************************/
+
+	SUB displayStatus(INTEGER search_status)
+	IF(search_status IS EQUAL TO -1)
+		DISPLAY "The element is not found"
+	ELSE
+		DISPLAY "The element is found at position: ", search_status

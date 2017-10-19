@@ -1,0 +1,59 @@
+
+Class: courses
+
+Attributes:
+courseCode
+courseName
+courseDuration
+courseLocation
+
+Objects:
+Discrete Mathematics
+Database
+Information Systems
+Islamic History
+
+
+
+Class: sections
+
+Attributes:
+sectionId
+sectionName
+profId
+courseCode
+
+Objects:
+(For Discrete Mathematics): graph theory
+(For information  systems): ORDBMS
+			    OLAP
+			    distributed systems
+
+Class: professor
+
+Attributes:
+profId
+profName
+profExp
+profQualification
+
+
+Class: test
+
+Attributes:
+testId
+
+Objects:
+marks
+testName
+testType
+grade
+
+
+Class: student
+
+Attributes:
+testId
+courseCode
+profId
+sectionId

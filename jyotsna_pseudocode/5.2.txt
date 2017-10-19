@@ -1,0 +1,21 @@
+Test ID			Test Case		Test Data		Expected
+
+
+(Question No.-1.2)
+
+T1		   On entering negative year	    -3		   Year cannot be negative
+T2		   On entering year>40		    45		   Year of experience cannot be>40
+
+(Question No.-2.4)
+
+T1		   On entering negative year	    -1		   Number of employee cannot be negative
+T2		   On entering number of emp,	    		   Entry cannot be negative
+		   emp Id, emp type
+T3		   On entering negative emp Id	    -4		   emp Id cant be negative
+
+(Question No.-3.7)
+
+T1		   On entering blank space for	    " "		   String1, string2 cannot be empty
+		   string1 and string2
+T2		   String2 which is greater	 string1=Test	   This is not possible string1> string2
+		   than string1			 string2=Testing

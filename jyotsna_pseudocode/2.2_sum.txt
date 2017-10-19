@@ -1,0 +1,34 @@
+/*********************************************************************
+ * File                	 	: 2.2_Sum.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate sum of digits.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 02-september-2017
+ * Change Description   	: Description about the changes implemented
+ **********************************************************************/
+
+BEGIN
+	DECLARE number, total_digit AS INTEGER
+	PROMPT "Enter the number" AND STORE IN number
+	total_digit=calculate_sum(number)
+	DISPLAY("Sum of digits:",sum)
+END
+
+/*********************************************************************
+* Module Name         	: calculate_sum()
+* Input Parameters      : number
+* Return Type         	: INTEGER
+* Author              	: Jyotsna Surve
+* Creation Date      	: 02-september-2017
+* Description        	: subroutine to calculate sum of digits
+ *********************************************************************/
+INTEGER SUB calculate_sum(INTEGER number)
+	DECLARE digit,sum AS INTEGER
+	INITIALIZE sum AS 0
+	DECLARE CONSTANT divisor AS 10
+	
+	CALCULATE digit = number%divisor
+	CALCULATE sum=sum+digit
+	CALCULATE number=number/divisor
+	RETURN (sum)
+END SUB

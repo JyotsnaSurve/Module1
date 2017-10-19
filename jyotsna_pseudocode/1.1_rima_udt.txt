@@ -1,0 +1,33 @@
+/****************************************************************************
+ * File                	 	: 1.1_rima_udt.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate units consumed and net amount.
+ * Version            	 	: 2.0
+ * Last Modified Date   	: 23-August-2017
+ * Change Description   	: program is done using user defined datatype
+ ****************************************************************************/
+
+RECORD user
+	DECLARE userid AS INTEGER
+	DECLARE username AS STRING
+	DECLARE lastmonthreading AS DECIMAL
+	DECLARE currentmonthreading AS DECIMAL
+END RECORD
+BEGIN
+	DECLARE unitconsumed AS DECIMAL
+	DECLARE netamount AS DECIMAL
+	DECLARE fixcharge AS INTEGER
+	DECLARE multiplier AS INTEGER
+	INITIALIZE multiplier=1.15
+	INITIALIZE fixcharge=100
+	PROMPT "enter userid" AND STORE IN user.userid
+	PROMPT "enter username" AND STORE IN user.username
+	PROMPT "enter last month month meter reading" AND STORE IN user.lastmonthreading
+	PROMPT "enter current month meter reading" AND STORE IN user.currentmonthreading
+	CALCULATE unitconsumed = (user.lastmonthreading)-(user.currentmonthreading)
+	CALCULATE netamount = unitconsumed * multiplier + fixcharge
+	DISPLAY "user ID:", user.userid
+	DISPLAY "user name:", user.username
+	DISPLAY "user consumed", unitconsumed
+	DISPLAY "net amount", netamount
+END

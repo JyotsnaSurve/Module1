@@ -1,0 +1,34 @@
+/***********************************************************************
+ * File                	 	: 4.3_totalrate.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to get total price of product
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 02-september-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+
+BEGIN
+	DECLARE totalrate,price AS DECIMAL
+	DECLARE CONSTANT tax_rate=0.56
+	PROMPT "Enter price of your product" AND STORE IN price
+
+	validate_prod_price(price)
+	EXCEPTION
+		WHEN Invalid_input_exception_price THEN
+			PRINT errormessage
+				Log errormessage in log file
+	
+	CALCULATE totalrate=price*tax_rate
+
+	DISPLAY "Total price of product is:",totalrate
+END
+
+	
+
+
+SUB validate_prod_price(INTEGER data)
+	IF NOT EQUAL TP isdigit(data)
+		RAISE Invalid_input_exception_price "Input must be positive number"
+	END IF
+
+END SUB

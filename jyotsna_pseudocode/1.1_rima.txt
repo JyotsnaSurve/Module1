@@ -1,0 +1,26 @@
+/***********************************************************************
+ * File                	 	: 1.1_rima.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate units consumed and net amount.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 23-August-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+
+BEGIN
+	DECLARE userid,fixcharge AS INTEGER
+	DECLARE username AS STRING
+	DECLARE last_month_reading, current_month_reading, units_consumed, net_amount AS DECIMAL
+	DECLARE CONSTANT multiplier=1.15
+	INITIALIZE fixcharge=100
+	PROMPT "enter userid" AND STORE IN userid
+	PROMPT "enter username" AND STORE IN username
+	PROMPT "enter last month month meter reading" AND STORE IN last_month_reading
+	PROMPT "enter current month meter reading" AND STORE IN current_month_reading
+	CALCULATE units_consumed = (last_month_reading)-(current_month_reading)
+	CALCULATE net_amount = units_consumed * multiplier + fixcharge
+	DISPLAY "user ID:", userid
+	DISPLAY "user name:", username
+	DISPLAY "user consumed:", units_consumed
+	DISPLAY "net amount:", net_amount
+END

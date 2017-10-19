@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Calculator..</title>
+		<style>
+			*{
+				font-family:Segoe UI;
+				font size:20px;
+			}
+			h2,h1{
+				text-align:center;
+				background-color:purple;
+				color:white;
+			}
+			table{
+				border:5px solid red;
+			}
+		</style>
+		<!--external JS-->
+		<script src="../scripts/simpleInt.js">
+		</script>
+	</head>
+	<body>
+		<h2>Simple Interest..</h2>
+		<!--<form method="post" action="mydetails.html">-->
+		<form>
+		<table align="center">
+			<tr>
+				<td>Principle amount : </td>
+				<td>
+					<input type="text" required name="p"
+					id="txtFN" placeholder="Number1" />
+				</td>
+			</tr>
+			<tr>
+				<td>time : </td>
+				<td>
+					<input type="text" required name="n"
+					id="txtSN" placeholder="Number2"/>
+				</td>
+			</tr>
+			<tr>
+				<td>rate : </td>
+				<td>
+					<input type="text" required name="r"
+					id="txtTN" placeholder="Number3"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<!--<input type="submit" value="add"/>-->
+					<!--Inline javascript
+					<input type="button" value="add" onclick="alert('HelloWorld')"/> 
+					<input type="button" value="calc" onclick="calc(txtFN,txtSN,txtTN)"/>-->
+					<input type="submit" value="calc" onclick="calSI(this.form)"/>
+				</td>
+				<td>
+					<input type="reset" value="clear"/>
+				</td>
+			</tr>
+			</table>
+			<hr/>
+			<h1 id="res"></h1>
+			</form>
+	</body>
+
+</html>

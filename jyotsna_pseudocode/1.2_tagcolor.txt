@@ -1,0 +1,27 @@
+/***********************************************************************
+ * File                	 	: 1.2_tagcolor.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to check organization of employee.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 23-August-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+ 
+BEGIN
+	DECLARE experience AS INTEGER
+	DECLARE tagcolor AS STRING
+	PROMPT "enter the experience" AND STORE IN experience
+	IF (experience<0 AND experience>50)
+		DISPLAY "enter the valid year"
+	ELSE IF (experience<3)
+		tagcolor="BLUE"
+	ELSE IF (experience<5)
+		tagcolor="GREY"
+	ELSE IF (experience<10)
+		tagcolor="YELLOW"
+	ELSE
+		tagcolor="RED"
+
+	END IF
+	DISPLAY tagcolor
+END

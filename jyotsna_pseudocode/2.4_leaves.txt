@@ -1,0 +1,50 @@
+/*********************************************************************
+ * File                	 	: 2.4_leaves.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to calculate leaves of employee.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 26-August-2017
+ * Change Description   	: Description about the changes implemented
+ *********************************************************************/
+
+RECORD Employee
+	DECLARE EmpId as INTEGER
+	DECLARE employmentType AS STRING
+END RECORD
+
+BEGIN
+       	DECLARE emp AS Employee
+		DECLARE TotalLeaves,No_of_employees AS INTEGER
+		PROMPT "Enter the no of employees" AND STORE IN No_of_employees
+		FOR index= 1 to No_of_employees
+                PROMPT "Enter the EmployeeId" AND STORE IN emp.EmpId
+                PROMPT "Enter the employmentType" AND STORE IN emp.employmentType
+				TotalLeaves=calculate_emptype_leaves(emp.employmentType)
+				DISPLAY "Employee ID:",emp.EmpId
+				DISPLAY "Total Available Leaves are:",TotalLeaves
+		END FOR
+END
+
+
+/*********************************************************************
+* Module Name         	: calculate_emptype_leaves()
+* Input Parameters      : employmentType
+* Return Type         	: INTEGER
+* Author              	: Jyotsna Surve
+* Creation Date      	: 26-August-2017
+* Description        	: calculate leaves of employee
+ *********************************************************************/
+INTEGER SUB calculate_emptype_leaves(STRING employmentType)
+	DECLARE FinalLeaves AS INTEGER
+	DECLARE CONSTANT month=12
+	DECLARE CONSTANT permanentemp_leaves=2
+	DECLARE CONSTANT temperaryemp_leaves=1
+			IF(employmentType IS EQUAL TO "PERMANENT") THEN
+				leaves=permanentemp_leaves;
+				TotalLeaves=leaves*12;
+			ELSE IF(employmentType IS EQUAL TO "CONTRACT") THEN
+				leaves=temperaryemp_leaves;
+			END IF 
+				CALCULATE FinalLeaves=leaves*month;
+			RETURN FinalLeaves
+END

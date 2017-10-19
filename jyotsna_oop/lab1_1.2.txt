@@ -1,0 +1,7 @@
+
+I do not agree, the reason being, Discrete Mathematics comes under the course.
+Hence course becomes parent of Discrete Mathematics.
+The solution can be:
+
+course-class
+Discrete Mathematics-object

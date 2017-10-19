@@ -1,0 +1,73 @@
+
+Class: courses
+
+Attributes:
+courseCode
+courseName
+courseDuration
+courseLocation
+
+Objects:
+Discrete Mathematics
+Database
+Information Systems
+Islamic History
+
+Methods:
+getcoursedetails();
+getlocation();
+getsectiondetails();
+
+
+Class: sections
+
+Attributes:
+sectionId
+sectionName
+profId
+courseCode
+
+Objects:
+(For Discrete Mathematics): graph theory
+(For information  systems): ORDBMS
+			    OLAP
+			    distributed systems
+
+Methods:
+getsectiondetails();
+
+
+Class: professor
+
+Attributes:
+profId
+profName
+profExp
+profQualification
+
+Methods:
+getprofessordetails();
+
+
+Class: test
+
+Attributes:
+testId
+
+Objects:
+marks
+testName
+testType
+grade
+
+Methods:
+
+
+
+Class: student
+
+Attributes:
+testId
+courseCode
+profId
+sectionId

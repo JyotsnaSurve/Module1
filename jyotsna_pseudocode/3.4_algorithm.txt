@@ -1,0 +1,2 @@
+1. It calculates sum of given n integers.
+2. Efficiency class of the given algorithm is O(n).

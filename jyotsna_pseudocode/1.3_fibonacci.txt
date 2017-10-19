@@ -1,0 +1,27 @@
+/***********************************************************************
+ * File                	 	: 1.3_fibonacci.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to print fibonacci series.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 02-september-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+BEGIN
+	DECLARE lastno,sum,firstno,secondno,count AS INTERGER
+	INITIALIZE sum TO 0
+	INITIALIZE firstno TO 0
+	INITIALIZE secondno TO 1
+	
+	PROMPT "Enter the last number in series" AND STORE IN lastno
+	DISPLAY(firstno)
+	DISPLAY(secondno)
+	
+	FOR count 0 TO lastno
+		sum=firstno+secondno
+		DISPLAY(sum)
+		firstno=secondno
+		secondno=sum
+		count=count+1
+		
+	END FOR
+END

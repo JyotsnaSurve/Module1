@@ -1,0 +1,38 @@
+/*********************************************************************
+ * File                	 	: 3.7_strings.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to accept 2 strings and return 
+				  success message if second string is a 
+				  substring of first string. 
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 26-August-2017
+ * Change Description   	: Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE string AS STRING
+	DECLARE Sub_String AS STRING
+	DECLARE index1, index2, count, length_subString AS INTEGER
+	INITIALIZE length_subString, count AS 0
+	
+	PROMPT "Enter the string" AND STORE IN string
+	PROMPT "Enter the next string" AND STORE IN Sub_String
+	
+	FOR length_subString=0 AND Sub_String[length_subString] NOT EQUAL TO '\0'
+		length_subString+=length_subString
+	END FOR
+	
+	FOR index_string=0 TO NOT EQUAL TO '\0'
+		IF(Sub_String[INDEX_SUBsTRING)==string[index_string])
+			count++
+			INDEX_SUBsTRING++
+		END IF
+		index_string++
+	END FOR
+	
+	IF(count==length_subString)
+		PROMPT "Entered string is a sub string of inputed string."
+	ELSE
+		PROMPT "Entered string is not a sub string of inputed string."
+	END IF
+END

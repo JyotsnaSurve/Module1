@@ -1,0 +1,47 @@
+/***********************************************************************
+ * File                	 	: 1.6_smallest.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to display smallest number in an 
+				  array and display odd and even numbers.
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 23-August-2017
+ * Change Description   	: Description about the changes implemented
+ ***********************************************************************/
+
+BEGIN
+	DECLARE size AS INTEGER
+	INITIALIZE size=10
+	DECLARE arr[size], arr_odd[size], arr_even[size] AS INTEGER
+	DECLARE smallest, index, index_even, index_odd AS INTEGER
+	DISPLAY "enter the numbers in array"
+	FOR index=0 TO size-1
+		ACCEPT arr[index]
+		index=index+1
+	END FOR
+	smallest=arr[0]
+	FOR index=1 TO size-1
+		IF(arr[index]<smallest)
+			smallest=arr[index]
+			index=index+1
+		END IF
+	END FOR
+	DISPLAY "smallest number is:", smallest
+	FOR index=0 TO size-1
+		IF(arr[index]%2=0) //finding even numbers
+			arr_even[index_even]=arr[index]
+			index_even=index_even+1
+		ELSE
+			arr_odd[index_odd]=arr[index]
+			index_odd=index_odd+1
+		END IF
+		index=index+1
+	END FOR
+	DISPLAY "Even numbers in array are:"
+	FOR index=0 TO index_even
+		DISPLAY arr_even[index]
+	END FOR
+	DISPLAY "Odd numbers in array are:"
+	FOR index=0 TO index_odd
+		DISPLAY arr_odd[index]
+	END FOR
+END

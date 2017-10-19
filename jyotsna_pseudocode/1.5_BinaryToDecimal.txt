@@ -1,0 +1,26 @@
+/*********************************************************************
+ * File                	 	: 1.5_BinaryToDecimal.txt
+ * Author Name          	: Jyotsna Surve
+ * Desc                	 	: Program to convert a binary number to decimal. 
+ * Version            	 	: 1.0
+ * Last Modified Date   	: 02-september-2017
+ * Change Description   	: Description about the changes implemented
+ *********************************************************************/
+
+BEGIN
+	DECLARE num,binary,decimal,base,rem AS INTEGER
+	INITIALIZE decimal AS O AND base AS 1
+	DECLARE CONSTANT div AS 10 AND  base_constant AS 2
+	
+	PROMPT "Enter the binary value" AND STORE IN num
+	binary=num
+	
+	WHILE num is greater than 0
+		CALCULATE rem=num%div
+			  decimal=decimal+rem*base
+			  num=num/div
+			  base=base_constant
+	END WHILE
+	DISPLAY("The binary value is:",binary)
+	DISPLAY("The decimal value is:",decimal)
+END
